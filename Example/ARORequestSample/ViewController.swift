@@ -163,7 +163,7 @@ extension ViewController: ApiRequestable {
       responseParser: responseParser
     ).subscribe { (event) in
       print(event)
-    }.addDisposableTo(disposeBag)
+    }.disposed(by: disposeBag)
   }
 
   fileprivate func doErrorExample() {
@@ -181,7 +181,7 @@ extension ViewController: ApiRequestable {
       responseParser: responseParser
     ).subscribe { (event) in
       print(event)
-    }.addDisposableTo(disposeBag)
+    }.disposed(by: disposeBag)
   }
 
   fileprivate func doNullResponseExample() {
@@ -199,7 +199,7 @@ extension ViewController: ApiRequestable {
       responseParser: responseParser
     ).subscribe { (event) in
       print(event)
-    }.addDisposableTo(disposeBag)
+    }.disposed(by: disposeBag)
   }
 }
 
@@ -217,7 +217,7 @@ extension ViewController: MyApiRequestable {
     
     request(url: url, method: .get, parameters: nil).subscribe { (event: Event<SuccessResponse>) in
       print(event)
-    }.addDisposableTo(disposeBag)
+    }.disposed(by: disposeBag)
   }
   
   fileprivate func doMyApiRequestableErrorExample() {
@@ -225,6 +225,6 @@ extension ViewController: MyApiRequestable {
 
     request(url: url, method: .get, parameters: nil).subscribe { (event) in
       print(event)
-    }.addDisposableTo(disposeBag)
+    }.disposed(by: disposeBag)
   }
 }

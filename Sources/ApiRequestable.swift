@@ -62,7 +62,7 @@ public extension ApiRequestable {
     .flatMap { self.parseSuccessResponseTask(responseParser: responseParser, response: $0) }
     .do(
       onError: { _ in self.updateRequestStatus(.error) },
-      onCompleted: { _ in self.updateRequestStatus(.success) }
+      onCompleted: { self.updateRequestStatus(.success) }
     )
   }
   
@@ -88,7 +88,7 @@ public extension ApiRequestable {
     .flatMap { self.parseSuccessResponseTask(responseParser: responseParser, response: $0) }
     .do(
       onError: { _ in self.updateRequestStatus(.error) },
-      onCompleted: { _ in self.updateRequestStatus(.success) }
+      onCompleted: { self.updateRequestStatus(.success) }
     )
   }
 

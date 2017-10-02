@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "ARORequest"
-  s.version = "0.1.0"
+  s.version = "0.1.1"
   s.summary = "Alamofire + RxSwift + ObjectMapper"
   s.homepage = "https://github.com/taka0125/ARORequest"
   s.license = "MIT"
@@ -9,11 +9,11 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = "8.0"
 
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 
   s.source_files = "Sources/**/*.swift"
 
-  s.dependency 'Alamofire', '~> 4.1'
-  s.dependency 'RxSwift', '~> 3.0'
-  s.dependency 'ObjectMapper', '~> 2.2.1'
+  s.dependency 'Alamofire', '~> 4.5'
+  s.dependency 'RxSwift'
+  s.dependency 'ObjectMapper', '~> 3.0'
 end
